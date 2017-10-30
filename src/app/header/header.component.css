@@ -1,0 +1,29 @@
+.header {
+  color: #1fa67b;
+  background-color: #02000099;
+  border-radius: 0px;
+  border: none;
+  padding-top: 17px;
+
+  /* border-bottom: 1px solid #1fa67b; */
+}
+.navbar-brand {
+  color: #1fa67b;
+  font-size: 51px;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  float: none;
+  line-height: 1;
+}
+
+.navbar-brand:hover {
+  color: #d4d4d4;
+}
+
+.navbar-header {
+  float: left;
+  padding: 44px;
+  text-align: center;
+  width: 100%;
+}

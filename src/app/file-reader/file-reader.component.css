@@ -1,0 +1,214 @@
+/*    --------------------------------------------------
+	:: Login Section
+	-------------------------------------------------- */
+.login {
+  padding-top: 50px;
+}
+.login .form-wrap {
+  width: 30%;
+  margin: 0 auto;
+}
+.login h1 {
+  color: #1fa67b;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.login .form-group {
+  margin-bottom: 25px;
+}
+.login .checkbox {
+  margin-bottom: 20px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.login .checkbox.show:before {
+  content: '\e013';
+  color: #1fa67b;
+  font-size: 17px;
+  margin: 1px 0 0 3px;
+  position: absolute;
+  pointer-events: none;
+  font-family: 'Glyphicons Halflings';
+}
+.login .checkbox .character-checkbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  display: inline-block;
+}
+.login .checkbox .label {
+  color: #6d6d6d;
+  font-size: 13px;
+  font-weight: normal;
+}
+.login .btn.btn-custom {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.login .forget {
+  font-size: 13px;
+  text-align: center;
+  display: block;
+}
+[hidden] {
+  display: none !important;
+}
+/*    --------------------------------------------------
+	:: Inputs & Buttons
+	-------------------------------------------------- */
+.form-control {
+  color: #212121;
+}
+.btn-custom {
+  color: #fff;
+  background-color: #1fa67b;
+}
+.btn-custom:hover,
+.btn-custom:focus {
+  color: #fff;
+}
+
+/*    --------------------------------------------------
+    :: Footer
+	-------------------------------------------------- */
+#footer {
+  color: #6d6d6d;
+  font-size: 12px;
+  text-align: center;
+}
+#footer p {
+  margin-bottom: 0;
+}
+#footer a {
+  color: inherit;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  width: 300px;
+  padding-top: 20px;
+  font-size: 48px;
+  opacity: 0.9;
+  color: #1fa67b;
+  background-color: #020000e6;
+  border-radius: 60px;
+  border: 2px solid #1fa67b;
+}
+.btn-file:hover {
+  color: #120d0d;
+  background-color: #1fa67bcc;
+  border-radius: 60px;
+  border: 2px solid #120d0d;
+}
+.btn-file input[type='file'] {
+  /* position: absolute; */
+  /* top: 0;
+  right: 0; */
+
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  /* background: white; */
+  cursor: inherit;
+  display: block;
+}
+
+.heading {
+  color: #1fa67b;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+}
+.selected-file-details {
+  padding: 20px;
+  color: #1fa67b;
+  background-color: #000000e6;
+  border-radius: 0px;
+  width: 100%;
+  position: absolute;
+  float: left;
+  left: 0px;
+  /* border-bottom: 1px solid #1fa67b; */
+  border: none;
+}
+
+.ping-btn-container {
+  margin-top: 35vh;
+}
+
+.btn-cancel {
+  background: #f000;
+  font-size: 30px;
+  color: #209a73;
+  border: none;
+  position: absolute;
+
+  right: 0px;
+  top: 9px;
+}
+.btn-no-bg {
+  background: #f000;
+  font-size: 30px;
+  color: #209a73;
+  border: none;
+}
+
+.btn-no-bg:hover {
+  background: #f000;
+  font-size: 30px;
+  color: rgba(245, 245, 245, 0.9);
+  border: none;
+}
+
+.btn-no-bg:active {
+  background: #f000;
+
+  color: rgba(245, 245, 245, 0.9);
+  border: none;
+}
+
+.btn-cancel:active {
+  background: #f000;
+
+  color: rgba(245, 245, 245, 0.9);
+  border: none;
+}
+.loading {
+  background: #2c605a33;
+  height: 100vh;
+  /* margin-top: 82px; */
+  padding-top: 260px;
+  width: 100%;
+  position: absolute;
+  float: left;
+  left: 0px;
+}
+.confirm-container {
+  margin-top: 156px;
+  color: #1fa67b;
+  font-size: 24px;
+  background: #060a1a99;
+  position: absolute;
+  height: 83vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding-top: 315px;
+}
