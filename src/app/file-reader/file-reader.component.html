@@ -1,3 +1,5 @@
+<ng2-slim-loading-bar color="#1fa67b" height="10px"></ng2-slim-loading-bar>
+
 <div class="loading" *ngIf="loading">
   <app-spinner></app-spinner>
 </div>
@@ -8,8 +10,9 @@
         <form role="form" autocomplete="off">
           <div class="form-group ">
             <label class="btn btn-default btn-file">
-                Browse  <input type="file" #file (change)="onChange(file.files)" hidden />
-              </label>
+              Browse
+              <input type="file" #file (change)="onChange(file.files)" hidden />
+            </label>
           </div>
         </form>
       </div>
@@ -30,7 +33,9 @@
       <div *ngIf="!confirmPing" class=" text-center selected-file-details">
 
         <h2 class="heading">{{selectedFile.name}} - {{selectedFile.count}} records</h2>
-        <button class=" btn-cancel" (click)="cancel()"><i class="glyphicon glyphicon-remove"></i></button>
+        <button class=" btn-cancel" (click)="cancel()">
+          <i class="glyphicon glyphicon-remove"></i>
+        </button>
       </div>
     </div>
     <div *ngIf="!confirmPing" class="row">
@@ -41,8 +46,12 @@
     <div *ngIf="confirmPing" class="confirm-container text-center">
       <p>Are you sure you wish to ping these records?</p>
       <p>This will cost ${{(selectedFile.count * 0.10).toPrecision(2)}}</p>
-      <button class="btn-no-bg" (click)="cancelConfirm()"><i class="glyphicon glyphicon-remove"></i></button>
-      <button class="btn-no-bg" (click)="ping()"><i class="glyphicon glyphicon-ok"></i></button>
+      <button class="btn-no-bg" (click)="cancelConfirm()">
+        <i class="glyphicon glyphicon-remove"></i>
+      </button>
+      <button class="btn-no-bg" (click)="ping()">
+        <i class="glyphicon glyphicon-ok"></i>
+      </button>
     </div>
   </section>
 </div>

@@ -28,13 +28,13 @@
   user-select: none;
 }
 .login .checkbox.show:before {
-  content: '\e013';
+  content: "\e013";
   color: #1fa67b;
   font-size: 17px;
   margin: 1px 0 0 3px;
   position: absolute;
   pointer-events: none;
-  font-family: 'Glyphicons Halflings';
+  font-family: "Glyphicons Halflings";
 }
 .login .checkbox .character-checkbox {
   width: 25px;
@@ -70,7 +70,7 @@
 }
 .btn-custom {
   color: #fff;
-  background-color: #1fa67b;
+  background-color: rgba(31, 166, 123, 0.48);
 }
 .btn-custom:hover,
 .btn-custom:focus {
@@ -101,17 +101,17 @@
   font-size: 48px;
   opacity: 0.9;
   color: #1fa67b;
-  background-color: #020000e6;
+  background-color: rgba(0, 0, 0, 0.43);
   border-radius: 60px;
   border: 2px solid #1fa67b;
 }
 .btn-file:hover {
   color: #120d0d;
-  background-color: #1fa67bcc;
+  background-color: rgba(31, 166, 123, 0.48);
   border-radius: 60px;
   border: 2px solid #120d0d;
 }
-.btn-file input[type='file'] {
+.btn-file input[type="file"] {
   /* position: absolute; */
   /* top: 0;
   right: 0; */
@@ -139,7 +139,7 @@
 .selected-file-details {
   padding: 20px;
   color: #1fa67b;
-  background-color: #000000e6;
+  background-color: rgba(0, 0, 0, 0.79);
   border-radius: 0px;
   width: 100%;
   position: absolute;
@@ -154,7 +154,7 @@
 }
 
 .btn-cancel {
-  background: #f000;
+  background-color: transparent;
   font-size: 30px;
   color: #209a73;
   border: none;
@@ -164,34 +164,34 @@
   top: 9px;
 }
 .btn-no-bg {
-  background: #f000;
+  background-color: transparent;
   font-size: 30px;
   color: #209a73;
   border: none;
 }
 
 .btn-no-bg:hover {
-  background: #f000;
+  background-color: transparent;
   font-size: 30px;
   color: rgba(245, 245, 245, 0.9);
   border: none;
 }
 
 .btn-no-bg:active {
-  background: #f000;
+  background-color: transparent;
 
   color: rgba(245, 245, 245, 0.9);
   border: none;
 }
 
 .btn-cancel:active {
-  background: #f000;
+  background-color: transparent;
 
   color: rgba(245, 245, 245, 0.9);
   border: none;
 }
 .loading {
-  background: #2c605a33;
+  background-color: rgba(0, 0, 0, 0.79);
   height: 100vh;
   /* margin-top: 82px; */
   padding-top: 260px;
@@ -204,7 +204,7 @@
   margin-top: 156px;
   color: #1fa67b;
   font-size: 24px;
-  background: #060a1a99;
+  background-color: rgba(0, 0, 0, 0.79);
   position: absolute;
   height: 83vh;
   width: 100%;

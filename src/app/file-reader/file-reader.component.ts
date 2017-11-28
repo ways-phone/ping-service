@@ -1,5 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
+import { ComponentCanDeactivate } from "../pending-changes.guard";
+
 import * as Papa from "papaparse/papaparse.min.js";
+import { SlimLoadingBarService } from "ng2-slim-loading-bar";
+
 import { PingService } from "../ping-service";
 import { Promise } from "bluebird";
 import { PingRecord } from "../PingRecord";
@@ -15,7 +19,7 @@ import _ from "lodash";
   styleUrls: ["./file-reader.component.css"],
   providers: [PingService]
 })
-export class FileReaderComponent {
+export class FileReaderComponent implements ComponentCanDeactivate {
   errors: Array<string>;
   selectedFile: PingFile;
   returnRecords;
@@ -23,9 +27,17 @@ export class FileReaderComponent {
   records: PingRecord[];
   loading: boolean;
 
-  constructor(private pingService: PingService) {
+  constructor(
+    private pingService: PingService,
+    private slimLoadingBarService: SlimLoadingBarService
+  ) {
     this.loading = false;
     this.confirmPing = false;
+  }
+
+  @HostListener("window:beforeunload")
+  canDeactivate(): boolean {
+    return false;
   }
 
   // Called from the component to reset the page.
@@ -65,6 +77,7 @@ export class FileReaderComponent {
 
   // Downloads the ping results as a csv file
   private downloadAsCSV(results) {
+    this.slimLoadingBarService.complete();
     // mutates the original records array and sets the status to the ping response
     results.forEach(record => {
       let current = _.find(this.records, { RequestId: record.RequestId });
@@ -77,7 +90,7 @@ export class FileReaderComponent {
     const csv = Papa.unparse(this.records);
 
     // uses the path library to strip the file type from the filename
-    const path = `${pathParse(this.selectedFile.name).name}-pinged.csv`;
+    const path = `${pathParse(this.selectedFile.name).name}_OUT.csv`;
 
     // downloads the csv from the browser
     var blob = new Blob([csv], { type: "data:text/csv;charset=utf-8" });
@@ -94,10 +107,17 @@ export class FileReaderComponent {
   // iterates over all records and calls the Ping Service.
   ping() {
     this.loading = true;
+    const length = this.records.length;
+    let count = 0;
     Promise.map(this.records, record => {
       return this.pingService
         .pingRecord(record)
-        .then(this.formatPingResponse)
+        .then(response => {
+          count = count + 1;
+          const progress = count / length * 100;
+          this.slimLoadingBarService.progress = progress;
+          return this.formatPingResponse(response);
+        })
         .catch(err => console.log(err));
     })
       .then(this.downloadAsCSV.bind(this))

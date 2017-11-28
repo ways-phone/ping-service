@@ -17,7 +17,8 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/ng2-slim-loading-bar/style.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
